@@ -7,36 +7,36 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "cross-env PUBLIC_URL=/ cross-env CI=false vue-cli-service build && gulp licenses",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider PUBLIC_URL=/ cross-env CI=false vue-cli-service build && gulp licenses",
     "lint": "vue-cli-service lint",
-    "build:tailwind": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css",
+    "build:tailwind": "tailwindcss build src/assets/styles/index.css -o src/assets/styles/tailwind.css",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run serve"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
-    "@popperjs/core": "2.9.1",
-    "@tailwindcss/forms": "0.2.1",
-    "@vue/compiler-sfc": "3.0.7",
-    "chart.js": "2.9.4",
-    "core-js": "3.9.1",
-    "gulp": "4.0.2",
-    "gulp-append-prepend": "1.0.8",
-    "tailwindcss": "2.0.4",
-    "vue": "3.0.7",
-    "vue-router": "4.0.5"
+    "@popperjs/core": "^2.11.8",
+    "@tailwindcss/forms": "^0.5.3",
+    "@vue/compiler-sfc": "^3.3.4",
+    "chart.js": "^3.9.1",
+    "core-js": "^3.32.1",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-append-prepend": "^1.0.8",
+    "tailwindcss": "^3.3.2",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.13.10",
-    "@babel/eslint-parser": "7.13.10",
-    "@vue/cli-plugin-babel": "5.0.0-alpha.7",
-    "@vue/cli-plugin-eslint": "5.0.0-alpha.7",
-    "@vue/cli-service": "5.0.0-alpha.7",
-    "autoprefixer": "10.2.5",
-    "eslint": "7.22.0",
-    "eslint-plugin-vue": "7.7.0",
-    "postcss": "8.4.39",
-    "vue-template-compiler": "2.6.12",
-    "cross-env": "^7.0.3"
+    "@babel/core": "^7.23.0",
+    "@babel/eslint-parser": "^7.23.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "autoprefixer": "^10.4.15",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.51.0",
+    "eslint-plugin-vue": "^9.20.0",
+    "postcss": "^8.4.39"
   },
   "eslintConfig": {
     "root": true,
@@ -54,11 +54,15 @@
   },
   "postcss": {
     "plugins": {
+      "tailwindcss": {},
       "autoprefixer": {}
     }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "engines": {
+    "node": "16.x"
+  }
 }
