@@ -44,7 +44,7 @@
             <li>
               <a
                 href="#"
-                class="hover:text-blueGray-300 text-sm font-semibold text-white block py-1 px-3"
+                class="hover:text-blueGray-300 font-semibold text-sm text-white block py-1 px-3"
               >
                 Blog
               </a>
